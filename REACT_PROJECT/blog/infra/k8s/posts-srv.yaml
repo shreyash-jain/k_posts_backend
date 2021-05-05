@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-srv
+spec:
+  type: NodePort
+  selector:
+    app: posts
+  ports:
+  - name : posts
+    protocol : TCP
+    # port of node service
+    port: 4000
+    # port to image container
+    targetPort: 4000
